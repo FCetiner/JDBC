@@ -53,8 +53,10 @@ public class Jdbc2DDL {
 	   // execute() metodu DDL komutlarinda hep false deger dondurdugu icin 
 			// donus degerine bakmak gerekli degildir. Zaten komutun calismasi ile 
 			// ilgili bir sorun var ise SQL EXception olusacaktir.
-	      
 	      //Tablo create edildiğini teyit ettiğimiz kodlar
+	      
+	      
+	      //******2. yol*******
 //	      st.execute(sorgu);
 //	      System.out.println("isciler tablosu oluşturuldu");
 //	        
@@ -74,7 +76,7 @@ public class Jdbc2DDL {
  */
 //	     st.execute("alter table isciler add isim varchar(20)");
 //	     System.out.println("isçiler tablosuna sutun eklendi");
-	      
+//	      
 	      
 	     /*=======================================================================
 //		  ORNEK4:isciler tablosuna soyisim VARCHAR(20) ve sehir VARCHAR(10)) 
@@ -104,14 +106,15 @@ public class Jdbc2DDL {
 //		/*=======================================================================
 //		  ORNEK7:calisanlar tablosunu siliniz.  
 //		========================================================================*/
-		String dropQuery2 = "DROP TABLE calisanlar5 ";
-		st.execute(dropQuery2);
-	
-		System.out.println("calisanlar tablosu silindi..");
-	
-	
+//		String dropQuery2 = "DROP TABLE calisanlar5 ";
+//		st.execute(dropQuery2);	
+//		System.out.println("calisanlar tablosu silindi..");
+//	
 	
 	
+	        con.close();
+	        st.close();
+	        st.close();
 	
 	}
 
