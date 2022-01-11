@@ -21,8 +21,8 @@ public class Jdbc4CRUD {
 		 * int ========================================================================
 		 */
 
-		st.execute("CREATE TABLE urunler(" + " id int," + " isim VARCHAR(10)," + " fiyat double)");
-		System.out.println("Tablo oluşturuldu");
+//		st.execute("CREATE TABLE urunler(" + " id int," + " isim VARCHAR(10)," + " fiyat double)");
+//		System.out.println("Tablo oluşturuldu");
 
 		/*
 		 * ======================================================================= //
@@ -37,16 +37,50 @@ public class Jdbc4CRUD {
 		// 2) POJO Class nesnelerini saklayacak bir collection olusturulur
 		// 3) bir dongu ile kayitlar eklenir.
 
-		List<Urun> kayitlar = new ArrayList<>();
-
-		kayitlar.add(new Urun(101, "laptop", 6500));
-		kayitlar.add(new Urun(102, "PC", 4500));
-		kayitlar.add(new Urun(103, "Telefon", 4500));
-		kayitlar.add(new Urun(104, "Anakart", 1500));
-		kayitlar.add(new Urun(105, "Klavye", 200));
-		kayitlar.add(new Urun(106, "Fare", 100));
-
-		con.prepareStatement("insert into urunler values(?,?,?)");
+//		List<Urun> kayitlar = new ArrayList<>();
+//
+//		kayitlar.add(new Urun(101, "laptop", 6500));
+//		kayitlar.add(new Urun(102, "PC", 4500));
+//		kayitlar.add(new Urun(103, "Telefon", 4500));
+//		kayitlar.add(new Urun(104, "Anakart", 1500));
+//		kayitlar.add(new Urun(105, "Klavye", 200));
+//		kayitlar.add(new Urun(106, "Fare", 100));
+//
+//		PreparedStatement veri= con.prepareStatement("insert into urunler values(?,?,?)");
+//		
+//		for (Urun each : kayitlar) {
+//			veri.setInt(1,each.getId());
+//			veri.setString(2, each.getIsim());
+//			veri.setDouble(3, each.getFiyat());
+//			veri.addBatch();		//hepsini toparlar tek veri haline getir
+//		}
+//		veri.executeBatch();		//database e yolla
+//		System.out.println("kayitlar eklendi");
+		
+		// ürünler tablosundaki PC nin fiyatini %10 zam yapınız
+		
+		
+//		int s1=st.executeUpdate("UPDATE urunler SET fiyat=fiyat*1.1 WHERE isim='PC'");
+//		System.out.println(s1 + " satır güncellendi");
+		
+		/*=======================================================================
+		  ORNEK4: urunler tablosuna Marka adinda ve Default degeri ASUS olan yeni 
+		  bir sutun ekleyiniz.
+		========================================================================*/
+		
+//		st.executeUpdate("ALTER TABLE urunler ADD marka VARCHAR(10) DEFAULT 'ASUS'");
+//		System.out.println("yeni sütun eklendi");
+		
+		/*=======================================================================
+		  ORNEK7: urunler tablosunu siliniz.
+		========================================================================*/
+		
+//			st.executeUpdate("DROP TABLE urunler");
+//			System.out.println("Tablo silindi");
+		
+		st.close();
+		con.close();
+		
 		
 		
 		
