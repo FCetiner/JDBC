@@ -25,10 +25,10 @@ public class Jdbc1Query02 {
 	     System.out.println("=====================================");
 	     
 	     
-//			/*=======================================================================
-//		 ORNEK2: SATIS ve MUHASEBE bolumlerinde calisan personelin isimlerini ve 
-// 		 maaslarini, maas ters sirali olarak listeleyiniz
-//		========================================================================*/ 
+			/*=======================================================================
+	 		ORNEK2: SATIS ve MUHASEBE bolumlerinde calisan personelin isimlerini ve 
+	  		 maaslarini, maas ters sirali olarak listeleyiniz
+		========================================================================*/ 
 	     
 	      ResultSet tablo2= st.executeQuery("select isim, maas "
 	     		+ " from personel "
@@ -42,12 +42,12 @@ public class Jdbc1Query02 {
 	     
 	     
 	   System.out.println("=====================================");
-//		
+		
 	   /*=======================================================================
-//		  ORNEK3: Tüm bolumlerde calisan personelin isimlerini, bolum isimlerini 
-//		  ve maaslarini, bolum ve maas sirali listeleyiniz. NOT: calisani olmasa 
-//		  bile bolum ismi gosterilmelidir.
-//		========================================================================*/ 
+		  ORNEK3: Tüm bolumlerde calisan personelin isimlerini, bolum isimlerini 
+		  ve maaslarini, bolum ve maas sirali listeleyiniz. NOT: calisani olmasa 
+		  bile bolum ismi gosterilmelidir.
+		========================================================================*/ 
 	  ResultSet tablo3= st.executeQuery("select b.bolum_isim,p.isim,p.maas from bolumler b left join personel p "
 	   + " on p.bolum_id=b.bolum_id "
 	   + " order by b.bolum_isim,p.maas");
@@ -59,8 +59,8 @@ public class Jdbc1Query02 {
 	  System.out.println("=====================================");
 	   
 	  /*=======================================================================
-//	  ORNEK4: Maasi en yuksek 10 kisinin bolumunu,adini ve maasini listeyiniz
-//	========================================================================*/ 
+	  ORNEK4: Maasi en yuksek 10 kisinin bolumunu,adini ve maasini listeyiniz
+	========================================================================*/ 
 	  
 	  ResultSet tablo4= st.executeQuery( "select b.bolum_isim,p.isim,p.maas from personel p left join bolumler b "
 	  + " on p.bolum_id=b.bolum_id "

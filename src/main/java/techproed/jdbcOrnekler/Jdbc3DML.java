@@ -49,8 +49,7 @@ public class Jdbc3DML {
 		// addBatch metodu ile SQL ifadeleri gruplandirilabilir ve exucuteBatch()
 		// metodu ile veritabanina bir kere gonderilebilir.
 		// excuteBatch() metodu bir int [] dizi dondurur. Bu dizi her bir ifade
-		// sonucunda
-		// etkilenen satir sayisini gosterir.
+		// sonucunda etkilenen satir sayisini gosterir.
 
 //		String[] sorgular1 = { "INSERT INTO bolumler VALUES(81, 'YEMEKHANE2', 'MUS')",
 //				"INSERT INTO bolumler VALUES(82, 'OFIS3','ORDU')",

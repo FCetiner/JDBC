@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class Jdbc4CRUD {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
@@ -18,7 +19,7 @@ public class Jdbc4CRUD {
 		/*
 		 * =======================================================================
 		 * ORNEK1: urunler adinda bir tablo olusturalim id int, isim VARCHAR(10) fiyat
-		 * int ========================================================================
+		 * double ========================================================================
 		 */
 
 //		st.execute("CREATE TABLE urunler(" + " id int," + " isim VARCHAR(10)," + " fiyat double)");
@@ -33,29 +34,29 @@ public class Jdbc4CRUD {
 		// PreparedStatement hem hizli hem de daha guvenli (SQL injection saldirilari
 		// icin) bir yontemdir.
 		// Bunun icin;
-		// 1) Veri girisine uygun bir POJO(Plain Old Java Object) sinifi olusturulur.
+		// 1) Veri girisine uygun bir POJO(Plain Old Java Object) sinifi olusturulur.	//encapsule edilmiş urunler classı
 		// 2) POJO Class nesnelerini saklayacak bir collection olusturulur
 		// 3) bir dongu ile kayitlar eklenir.
 
-//		List<Urun> kayitlar = new ArrayList<>();
-//
-//		kayitlar.add(new Urun(101, "laptop", 6500));
-//		kayitlar.add(new Urun(102, "PC", 4500));
-//		kayitlar.add(new Urun(103, "Telefon", 4500));
-//		kayitlar.add(new Urun(104, "Anakart", 1500));
-//		kayitlar.add(new Urun(105, "Klavye", 200));
-//		kayitlar.add(new Urun(106, "Fare", 100));
-//
-//		PreparedStatement veri= con.prepareStatement("insert into urunler values(?,?,?)");
-//		
-//		for (Urun each : kayitlar) {
-//			veri.setInt(1,each.getId());
-//			veri.setString(2, each.getIsim());
-//			veri.setDouble(3, each.getFiyat());
-//			veri.addBatch();		//hepsini toparlar tek veri haline getir
-//		}
-//		veri.executeBatch();		//database e yolla
-//		System.out.println("kayitlar eklendi");
+		List<Urun> kayitlar = new ArrayList<>();		//Pojo class nesnelerini saklayacak collection
+
+		kayitlar.add(new Urun(101, "laptop", 6500));
+		kayitlar.add(new Urun(102, "PC", 4500));
+		kayitlar.add(new Urun(103, "Telefon", 4500));
+		kayitlar.add(new Urun(104, "Anakart", 1500));
+		kayitlar.add(new Urun(105, "Klavye", 200));
+		kayitlar.add(new Urun(106, "Fare", 100));
+
+		PreparedStatement veri= con.prepareStatement("insert into urunler values(?,?,?)");
+		
+		for (Urun each : kayitlar) {
+			veri.setInt(1,each.getId());
+			veri.setString(2, each.getIsim());
+			veri.setDouble(3, each.getFiyat());
+			veri.addBatch();		//hepsini toparlar tek veri haline getir
+		}
+		veri.executeBatch();		//database e yolla
+		System.out.println("kayitlar eklendi");
 		
 		// ürünler tablosundaki PC nin fiyatini %10 zam yapınız
 		
@@ -72,7 +73,7 @@ public class Jdbc4CRUD {
 //		System.out.println("yeni sütun eklendi");
 		
 		/*=======================================================================
-		  ORNEK7: urunler tablosunu siliniz.
+		  ORNEK5: urunler tablosunu siliniz.
 		========================================================================*/
 		
 //			st.executeUpdate("DROP TABLE urunler");
