@@ -2,7 +2,7 @@ package ferhat.jdbcPractice;
 
 import java.sql.*;
 
-public class P02_Query {
+public class P01_Query2 {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
